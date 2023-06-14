@@ -4,7 +4,6 @@ import './Pallet.css';
 
 class Pallet extends Component {
     render() {
-        console.log(this.props);
         const colorBoxes = this.props.colors.map(color => {
             return <ColorBox background={color.color} name={color.name} />
         });
