@@ -4,8 +4,8 @@ import Slider from 'rc-slider';
 
 import ColorBox from "./Colorbox";
 
-import './Pallet.css';
 import 'rc-slider/assets/index.css';
+import './Pallet.css';
 
 class Pallet extends Component {
     constructor(props) {
@@ -29,13 +29,15 @@ class Pallet extends Component {
         return (
             <div className="Pallet">
                 {/* Navbar goes here */}
-                <Slider
-                    min={100}
-                    max={900}
-                    step={100}
-                    defaultValue={level}
-                    onChange={this.changeLevel}
-                />
+                <div className="slider">
+                    <Slider
+                        min={100}
+                        max={900}
+                        step={100}
+                        defaultValue={level}
+                        onChange={this.changeLevel}
+                    />
+                </div>
                 <div className="Pallet-colors">
                     { colorBoxes }
                 </div>
