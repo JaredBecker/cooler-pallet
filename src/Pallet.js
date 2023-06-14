@@ -1,11 +1,11 @@
-import { Component } from "react";
+import { Component } from 'react';
 
 import ColorBox from './ColorBox';
 import { IconButton, Snackbar } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
 import './Pallet.css';
-import Navbar from "./Navbar";
+import Navbar from './Navbar';
 
 class Pallet extends Component {
     constructor(props) {
@@ -34,7 +34,7 @@ class Pallet extends Component {
     }
 
     render() {
-        const { colors } = this.props.pallet;
+        const { colors, palletName, emoji } = this.props.pallet;
         const {
             level,
             format,
@@ -42,21 +42,28 @@ class Pallet extends Component {
         } = this.state;
 
         const colorBoxes = colors[level].map(color => {
-            return <ColorBox background={color[format]} name={color.name} />
+            return <ColorBox
+                key={color.id}
+                background={color[format]}
+                name={color.name}
+            />
         });
 
         return (
-            <div className="Pallet">
+            <div className='Pallet'>
                 <Navbar
                     level={level}
                     format={format}
                     changeLevel={this.changeLevel}
                     handleFormatChange={this.changeColorFormat}
                 />
-                <div className="Pallet-colors">
+                <div className='Pallet-colors'>
                     {colorBoxes}
                 </div>
-                {/* footer */}
+                <footer className='Pallet-footer'>
+                    {palletName}
+                    <span className='emoji'>{emoji}</span>
+                </footer>
 
                 <Snackbar
                     anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
@@ -66,12 +73,10 @@ class Pallet extends Component {
                     ContentProps={{ 'aria-describedby': 'message-id' }}
                     onClose={this.closeSnackBar}
                     action={[
-                        <IconButton>
+                        <IconButton onClick={this.closeSnackBar}>
                             <CloseIcon
-                                onClick={this.closeSnackBar}
-                                color="inherit"
-                                key="close"
-                                aria-label="close"
+                                color='inherit'
+                                aria-label='close'
                             />
                         </IconButton>
                     ]}
