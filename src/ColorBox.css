@@ -5,4 +5,56 @@
     display: inline-block;
     position: relative;
     cursor: pointer;
+    margin-bottom: -3.5px;
+}
+
+.copy-btn {
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -15px;
+    text-align: center;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 1rem;
+    color: #fff;
+    line-height: 30px;
+    text-transform: uppercase;
+    border: none;
+    opacity: 0;
+}
+
+.ColorBox:hover .copy-btn {
+    opacity: 1;
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.box-content {
+    position: absolute;
+    /* width: 100%; this line is causing a weird overflow */
+    padding: 10px;
+    left: 0;
+    bottom: 0;
+    color: #000;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.see-more {
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    border: none;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    text-transform: uppercase;
 }
