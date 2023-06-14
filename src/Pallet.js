@@ -1,6 +1,8 @@
 import { Component } from "react";
 
-import ColorBox from "./ColorBox";
+import ColorBox from './ColorBox';
+import { IconButton, Snackbar } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 
 import './Pallet.css';
 import Navbar from "./Navbar";
@@ -11,9 +13,12 @@ class Pallet extends Component {
         this.state = {
             level: 500,
             format: 'hex',
+            showSnackBar: false,
         };
+
         this.changeLevel = this.changeLevel.bind(this);
         this.changeColorFormat = this.changeColorFormat.bind(this);
+        this.closeSnackBar = this.closeSnackBar.bind(this);
     }
 
     changeLevel(level) {
@@ -21,12 +26,20 @@ class Pallet extends Component {
     }
 
     changeColorFormat(format) {
-        this.setState({ format });
+        this.setState({ format, showSnackBar: true });
+    }
+
+    closeSnackBar() {
+        this.setState({ showSnackBar: false });
     }
 
     render() {
         const { colors } = this.props.pallet;
-        const { level, format } = this.state;
+        const {
+            level,
+            format,
+            showSnackBar,
+        } = this.state;
 
         const colorBoxes = colors[level].map(color => {
             return <ColorBox background={color[format]} name={color.name} />
@@ -38,12 +51,31 @@ class Pallet extends Component {
                     level={level}
                     format={format}
                     changeLevel={this.changeLevel}
-                    handleChange={this.changeColorFormat}
+                    handleFormatChange={this.changeColorFormat}
                 />
                 <div className="Pallet-colors">
                     {colorBoxes}
                 </div>
                 {/* footer */}
+
+                <Snackbar
+                    anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                    open={showSnackBar}
+                    autoHideDuration={3000}
+                    message={<span id='message-id'>Format changed to {format.toUpperCase()}</span>}
+                    ContentProps={{ 'aria-describedby': 'message-id' }}
+                    onClose={this.closeSnackBar}
+                    action={[
+                        <IconButton>
+                            <CloseIcon
+                                onClick={this.closeSnackBar}
+                                color="inherit"
+                                key="close"
+                                aria-label="close"
+                            />
+                        </IconButton>
+                    ]}
+                />
             </div>
         )
     }

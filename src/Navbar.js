@@ -9,11 +9,11 @@ import './Navbar.css';
 class Navbar extends Component {
     constructor(props) {
         super(props);
-        this.handleChange = this.handleChange.bind(this);
+        this.handleFormatChange = this.handleFormatChange.bind(this);
     }
 
-    handleChange(e) {
-        this.props.handleChange(e.target.value);
+    handleFormatChange(e) {
+        this.props.handleFormatChange(e.target.value);
     }
 
     render() {
@@ -36,7 +36,7 @@ class Navbar extends Component {
                     </div>
                 </div>
                 <div className='select-container'>
-                    <Select variant="standard" value={format} onChange={this.handleChange}>
+                    <Select variant="standard" value={format} onChange={this.handleFormatChange}>
                         <MenuItem value="hex">HEX - #ffffff</MenuItem>
                         <MenuItem value="rgb">RGB - (0, 0, 0)</MenuItem>
                         <MenuItem value="rgba">RGBA - (0, 0, 0, 1.0)</MenuItem>
