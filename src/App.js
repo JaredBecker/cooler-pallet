@@ -5,10 +5,9 @@ import { Component } from 'react';
 
 class App extends Component {
     render() {
-        console.log(generatePallet(seedColors[4]));
         return (
             <div>
-                <Pallet {...seedColors[4]} />
+                <Pallet pallet={generatePallet(seedColors[4])} />
             </div>
         );
     }
