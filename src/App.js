@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import Pallet from './Pallet';
+import seedColors from './seedColors'
 
 function App() {
     return (
-        <div className="App">
-
+        <div>
+            <Pallet {...seedColors[4]} />
         </div>
     );
 }
