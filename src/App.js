@@ -1,16 +1,20 @@
+import React from 'react';
+
 import Pallet from './Pallet';
+
 import seedColors from './seedColors';
 import { generatePallet } from './ColorHelpers';
-import { Component } from 'react';
+import { useParams } from 'react-router-dom';
 
-class App extends Component {
-    render() {
-        return (
-            <div>
-                <Pallet pallet={generatePallet(seedColors[4])} />
-            </div>
-        );
-    }
+const App = () => {
+    const {id} = useParams();
+    const findPallet = (id) => seedColors.find((el) => el.id === id);
+
+    return (
+        <div>
+            <Pallet pallet={generatePallet(findPallet(id))} />
+        </div>
+    );
 }
 
 export default App;
