@@ -6,50 +6,67 @@
 }
 
 .logo {
-    margin-right: 15px;
     padding: 0 13px;
-    font-size: 22px;
-    background-color: #eceff1;
     height: 100%;
     display: flex;
     align-items: center;
+    box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.8);
 }
 
 .logo a {
     text-decoration: none;
-    color: #000;
+    color: black;
+}
+
+.logo img {
+    max-width: 350px;
+    width: 100%;
 }
 
 .slider {
-    width: 350px;
+    width: 340px;
     margin: 0 10px;
     display: inline-block;
 }
 
-.slider .rc-slider-track {
+.rc-slider-track {
     background-color: transparent;
 }
 
-.slider .rc-slider-handle,
-.slider .rc-slider-handle:hover,
-.slider .rc-slider-handle:active,
-.slider .rc-slider-handle:focus,
-.slider .rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
+.rc-slider-rail {
+    height: 8px;
+}
+
+.rc-slider-handle,
+.rc-slider-handle:active,
+.rc-slider-handle:focus,
+.rc-slider-handle:hover {
     background-color: #1f1f1f;
-    border: 2px solid #1f1f1f;
     outline: none;
+    border: 2px solid #1f1f1f;
     box-shadow: none;
     width: 13px;
     height: 13px;
-    margin-left: -7px;
     margin-top: -3px;
 }
 
-.slider .rc-slider-rail {
-    height: 8px;
+.slider-container {
+    margin-left: 1rem;
 }
 
 .select-container {
     margin-left: auto;
     margin-right: 1rem;
+}
+
+@media screen and (max-width: 767.98px) {
+    .slider {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    .logo {
+        display: none;
+    }
 }

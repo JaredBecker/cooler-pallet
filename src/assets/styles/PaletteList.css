@@ -1,0 +1,76 @@
+.PaletteList-root {
+    background-color: #394bad;
+    background-image: url("../images/bg.svg");
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: scroll;
+}
+
+.PaletteList-container {
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.PaletteList-nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.PaletteList-new {
+    color: white;
+}
+
+.PaletteList-heading img {
+    max-width: 350px;
+    width: 100%;
+    border-radius: 0.25rem;
+}
+
+.PaletteList-palettes {
+    box-sizing: border-box;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    row-gap: 2.5rem;
+    column-gap: 2.5rem;
+}
+
+@media screen and (max-width: 1550px) {
+    .PaletteList-container {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 1199.98px) {
+    .PaletteList-container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 991.98px) {
+    .PaletteList-palettes {
+        grid-template-columns: repeat(2, 50%);
+        row-gap: 1.5rem;
+        column-gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    .PaletteList-container {
+        width: 75%;
+    }
+
+    .PaletteList-palettes {
+        grid-template-columns: repeat(1, 100%);
+    }
+}

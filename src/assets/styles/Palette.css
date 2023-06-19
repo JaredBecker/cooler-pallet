@@ -1,14 +1,16 @@
-.Pallet {
+.Palette {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.Pallet-colors {
+.Palette-colors {
     height: 90%;
 }
 
-.Pallet-footer {
-    background-color: #fff;
-    height: 4vh;
+.Palette-footer {
+    background-color: white;
+    height: 5vh;
     display: flex;
     justify-content: flex-end;
     align-items: center;
