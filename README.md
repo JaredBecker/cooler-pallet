@@ -1,6 +1,6 @@
 ## Colt Steele's Udemy React Course
 
-here is the [course](https://www.udemy.com/course/modern-react-bootcamp/)
+Here is the [course](https://www.udemy.com/course/modern-react-bootcamp/) so you know which one to stay away from😅
 
 ### I would not recommend this course
 
